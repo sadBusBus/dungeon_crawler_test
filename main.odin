@@ -22,14 +22,19 @@ main :: proc() {
 
     for !rl.WindowShouldClose(){
 
+        rl.UpdateCamera(&camera , .ORBITAL)
+
         rl.BeginDrawing()
         defer rl.EndDrawing()
 
-        rl.ClearBackground({128,180,255,255})
+        rl.ClearBackground({245,245,245,255})
 
         rl.BeginMode3D(camera)
 
-        rl.DrawCube({0,0,0},1,1,1,{255,120,0,255})
+        rl.DrawCube({0,0.5,0},1,1,1,{255,128,0,255})
+        rl.DrawCubeWires({0,0.5,0},1,1,1,{255,255,255,255})
+       rl.DrawGrid(100,0.25)
+
         rl.EndMode3D()
 
         rl.DrawFPS(10,10)

@@ -7,6 +7,7 @@ import "core:math/linalg"
 main :: proc() {
     rl.SetTraceLogLevel(.ERROR)
     rl.SetConfigFlags({.MSAA_4X_HINT , .VSYNC_HINT})
+    rl.InitWindow(1920,1080,"Dungeon Test")
     defer rl.CloseWindow()
 
     camera := rl.Camera3D{
